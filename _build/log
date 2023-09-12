@@ -1,5 +1,117 @@
-# dune init project nimm
+# dune exec nimm https://jsonplaceholder.typicode.com/posts/1 outputfile.txt
 # OCAMLPARAM: unset
 # Shared cache: disabled
 # Workspace root: /home/can/projects/ocaml-projects/nimm
 # Auto-detected concurrency: 16
+$ /home/can/.opam/5.0.0/bin/ocamlc.opt -config > /tmp/dune_22e634_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; ocaml_bin = External "/home/can/.opam/5.0.0/bin"
+#  ; ocaml = Ok External "/home/can/.opam/5.0.0/bin/ocaml"
+#  ; ocamlc = External "/home/can/.opam/5.0.0/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/home/can/.opam/5.0.0/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/home/can/.opam/5.0.0/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/home/can/.opam/5.0.0/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" :
+#            "/home/can/.opam/5.0.0/lib/ocaml:/home/can/.opam/5.0.0/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/home/can/.opam/5.0.0/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/home/can/projects/ocaml-projects/nimm"
+#        ; "INSIDE_DUNE" :
+#            "/home/can/projects/ocaml-projects/nimm/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/home/can/projects/ocaml-projects/nimm/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/home/can/projects/ocaml-projects/nimm/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/home/can/projects/ocaml-projects/nimm/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths =
+#      [ External "/home/can/.opam/5.0.0/lib/ocaml"
+#      ; External "/home/can/.opam/5.0.0/lib"
+#      ]
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "5.0.0"
+#      ; standard_library_default = "/home/can/.opam/5.0.0/lib/ocaml"
+#      ; standard_library = "/home/can/.opam/5.0.0/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "gcc"
+#      ; ocamlc_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread"; "-fPIC" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread"; "-fPIC" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; bytecomp_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "linux"
+#      ; asm = [ "as" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-pc-linux-gnu"
+#      ; target = "x86_64-pc-linux-gnu"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X032"
+#      ; cmi_magic_number = "Caml1999I032"
+#      ; cmo_magic_number = "Caml1999O032"
+#      ; cma_magic_number = "Caml1999A032"
+#      ; cmx_magic_number = "Caml1999Y032"
+#      ; cmxa_magic_number = "Caml1999Z032"
+#      ; ast_impl_magic_number = "Caml1999M032"
+#      ; ast_intf_magic_number = "Caml1999N032"
+#      ; cmxs_magic_number = "Caml1999D032"
+#      ; cmt_magic_number = "Caml1999T032"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /home/can/.opam/5.0.0/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I bin/.main.eobjs/byte -I bin/.main.eobjs/native -I /home/can/.opam/5.0.0/lib/base -I /home/can/.opam/5.0.0/lib/base/base_internalhash_types -I /home/can/.opam/5.0.0/lib/base/caml -I /home/can/.opam/5.0.0/lib/base/md5 -I /home/can/.opam/5.0.0/lib/base/shadow_stdlib -I /home/can/.opam/5.0.0/lib/base_bigstring -I /home/can/.opam/5.0.0/lib/base_quickcheck -I /home/can/.opam/5.0.0/lib/base_quickcheck/ppx_quickcheck/runtime -I /home/can/.opam/5.0.0/lib/bin_prot -I /home/can/.opam/5.0.0/lib/bin_prot/shape -I /home/can/.opam/5.0.0/lib/core -I /home/can/.opam/5.0.0/lib/core/base_for_tests -I /home/can/.opam/5.0.0/lib/core/command -I /home/can/.opam/5.0.0/lib/core/filename_base -I /home/can/.opam/5.0.0/lib/core/heap_block -I /home/can/.opam/5.0.0/lib/core/univ_map -I /home/can/.opam/5.0.0/lib/core/validate -I /home/can/.opam/5.0.0/lib/core_kernel/caml_threads -I /home/can/.opam/5.0.0/lib/core_kernel/caml_unix -I /home/can/.opam/5.0.0/lib/core_kernel/flags -I /home/can/.opam/5.0.0/lib/core_unix -I /home/can/.opam/5.0.0/lib/core_unix/error_checking_mutex -I /home/can/.opam/5.0.0/lib/core_unix/signal_unix -I /home/can/.opam/5.0.0/lib/fieldslib -I /home/can/.opam/5.0.0/lib/int_repr -I /home/can/.opam/5.0.0/lib/jane-street-headers -I /home/can/.opam/5.0.0/lib/ocaml/threads -I /home/can/.opam/5.0.0/lib/ocaml/unix -I /home/can/.opam/5.0.0/lib/parsexp -I /home/can/.opam/5.0.0/lib/ppx_assert/runtime-lib -I /home/can/.opam/5.0.0/lib/ppx_bench/runtime-lib -I /home/can/.opam/5.0.0/lib/ppx_compare/runtime-lib -I /home/can/.opam/5.0.0/lib/ppx_enumerate/runtime-lib -I /home/can/.opam/5.0.0/lib/ppx_expect/collector -I /home/can/.opam/5.0.0/lib/ppx_expect/common -I /home/can/.opam/5.0.0/lib/ppx_expect/config -I /home/can/.opam/5.0.0/lib/ppx_expect/config_types -I /home/can/.opam/5.0.0/lib/ppx_hash/runtime-lib -I /home/can/.opam/5.0.0/lib/ppx_here/runtime-lib -I /home/can/.opam/5.0.0/lib/ppx_inline_test/config -I /home/can/.opam/5.0.0/lib/ppx_inline_test/runtime-lib -I /home/can/.opam/5.0.0/lib/ppx_log/types -I /home/can/.opam/5.0.0/lib/ppx_module_timer/runtime -I /home/can/.opam/5.0.0/lib/ppx_sexp_conv/runtime-lib -I /home/can/.opam/5.0.0/lib/ppx_stable_witness/runtime -I /home/can/.opam/5.0.0/lib/ppx_stable_witness/stable_witness -I /home/can/.opam/5.0.0/lib/sexplib -I /home/can/.opam/5.0.0/lib/sexplib/unix -I /home/can/.opam/5.0.0/lib/sexplib0 -I /home/can/.opam/5.0.0/lib/spawn -I /home/can/.opam/5.0.0/lib/splittable_random -I /home/can/.opam/5.0.0/lib/stdio -I /home/can/.opam/5.0.0/lib/time_now -I /home/can/.opam/5.0.0/lib/typerep -I /home/can/.opam/5.0.0/lib/variantslib -I lib/.nimm.objs/byte -I lib/.nimm.objs/native -intf-suffix .ml -no-alias-deps -opaque -o bin/.main.eobjs/native/dune__exe__Main.cmx -c -impl bin/main.ml)
+$ (cd _build/default && /home/can/.opam/5.0.0/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o bin/main.exe lib/nimm.cmxa /home/can/.opam/5.0.0/lib/base/base_internalhash_types/base_internalhash_types.cmxa -I /home/can/.opam/5.0.0/lib/base/base_internalhash_types /home/can/.opam/5.0.0/lib/base/caml/caml.cmxa /home/can/.opam/5.0.0/lib/sexplib0/sexplib0.cmxa /home/can/.opam/5.0.0/lib/base/shadow_stdlib/shadow_stdlib.cmxa /home/can/.opam/5.0.0/lib/base/base.cmxa -I /home/can/.opam/5.0.0/lib/base /home/can/.opam/5.0.0/lib/ppx_sexp_conv/runtime-lib/ppx_sexp_conv_lib.cmxa /home/can/.opam/5.0.0/lib/ppx_compare/runtime-lib/ppx_compare_lib.cmxa /home/can/.opam/5.0.0/lib/ppx_enumerate/runtime-lib/ppx_enumerate_lib.cmxa /home/can/.opam/5.0.0/lib/ppx_hash/runtime-lib/ppx_hash_lib.cmxa /home/can/.opam/5.0.0/lib/ppx_here/runtime-lib/ppx_here_lib.cmxa /home/can/.opam/5.0.0/lib/ppx_assert/runtime-lib/ppx_assert_lib.cmxa /home/can/.opam/5.0.0/lib/ppx_bench/runtime-lib/ppx_bench_lib.cmxa /home/can/.opam/5.0.0/lib/base/md5/md5_lib.cmxa /home/can/.opam/5.0.0/lib/fieldslib/fieldslib.cmxa /home/can/.opam/5.0.0/lib/variantslib/variantslib.cmxa /home/can/.opam/5.0.0/lib/bin_prot/shape/bin_shape.cmxa /home/can/.opam/5.0.0/lib/ppx_stable_witness/stable_witness/stable_witness.cmxa /home/can/.opam/5.0.0/lib/bin_prot/bin_prot.cmxa -I /home/can/.opam/5.0.0/lib/bin_prot /home/can/.opam/5.0.0/lib/ppx_inline_test/config/inline_test_config.cmxa /home/can/.opam/5.0.0/lib/jane-street-headers/jane_street_headers.cmxa /home/can/.opam/5.0.0/lib/time_now/time_now.cmxa -I /home/can/.opam/5.0.0/lib/time_now /home/can/.opam/5.0.0/lib/ppx_inline_test/runtime-lib/ppx_inline_test_lib.cmxa /home/can/.opam/5.0.0/lib/stdio/stdio.cmxa /home/can/.opam/5.0.0/lib/ppx_module_timer/runtime/ppx_module_timer_runtime.cmxa /home/can/.opam/5.0.0/lib/ppx_stable_witness/runtime/ppx_stable_witness_runtime.cmxa /home/can/.opam/5.0.0/lib/typerep/typerep_lib.cmxa /home/can/.opam/5.0.0/lib/ppx_expect/common/expect_test_common.cmxa /home/can/.opam/5.0.0/lib/ppx_expect/config_types/expect_test_config_types.cmxa /home/can/.opam/5.0.0/lib/ppx_expect/collector/expect_test_collector.cmxa -I /home/can/.opam/5.0.0/lib/ppx_expect/collector /home/can/.opam/5.0.0/lib/ppx_expect/config/expect_test_config.cmxa /home/can/.opam/5.0.0/lib/parsexp/parsexp.cmxa /home/can/.opam/5.0.0/lib/sexplib/sexplib.cmxa /home/can/.opam/5.0.0/lib/ppx_log/types/ppx_log_types.cmxa /home/can/.opam/5.0.0/lib/splittable_random/splittable_random.cmxa /home/can/.opam/5.0.0/lib/base_quickcheck/base_quickcheck.cmxa /home/can/.opam/5.0.0/lib/base_quickcheck/ppx_quickcheck/runtime/ppx_quickcheck_runtime.cmxa /home/can/.opam/5.0.0/lib/int_repr/int_repr.cmxa /home/can/.opam/5.0.0/lib/base_bigstring/base_bigstring.cmxa -I /home/can/.opam/5.0.0/lib/base_bigstring /home/can/.opam/5.0.0/lib/core/base_for_tests/base_for_tests.cmxa /home/can/.opam/5.0.0/lib/core/filename_base/filename_base.cmxa /home/can/.opam/5.0.0/lib/core/univ_map/univ_map.cmxa /home/can/.opam/5.0.0/lib/core/command/command.cmxa /home/can/.opam/5.0.0/lib/core/heap_block/heap_block.cmxa -I /home/can/.opam/5.0.0/lib/core/heap_block /home/can/.opam/5.0.0/lib/core/validate/validate.cmxa /home/can/.opam/5.0.0/lib/core/core.cmxa -I /home/can/.opam/5.0.0/lib/core /home/can/.opam/5.0.0/lib/ocaml/unix/unix.cmxa /home/can/.opam/5.0.0/lib/ocaml/threads/threads.cmxa /home/can/.opam/5.0.0/lib/core_kernel/caml_threads/caml_threads.cmxa /home/can/.opam/5.0.0/lib/core_unix/error_checking_mutex/error_checking_mutex.cmxa -I /home/can/.opam/5.0.0/lib/core_unix/error_checking_mutex /home/can/.opam/5.0.0/lib/core_kernel/flags/flags.cmxa /home/can/.opam/5.0.0/lib/sexplib/unix/sexplib_unix.cmxa /home/can/.opam/5.0.0/lib/core_kernel/caml_unix/caml_unix.cmxa /home/can/.opam/5.0.0/lib/core_unix/signal_unix/signal_unix.cmxa -I /home/can/.opam/5.0.0/lib/core_unix/signal_unix /home/can/.opam/5.0.0/lib/spawn/spawn.cmxa -I /home/can/.opam/5.0.0/lib/spawn /home/can/.opam/5.0.0/lib/core_unix/core_unix.cmxa -I /home/can/.opam/5.0.0/lib/core_unix bin/.main.eobjs/native/dune__exe__Main.cmx)
