@@ -1,0 +1,5 @@
+# dune init project nimm
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /home/can/projects/ocaml-projects/nimm
+# Auto-detected concurrency: 16

@@ -1,0 +1,4 @@
+(executable
+ (public_name nimm)
+ (name main)
+ (libraries nimm))
