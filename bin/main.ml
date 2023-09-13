@@ -11,7 +11,8 @@ let save i dest =
   let response = String.sub (Bytes.to_string buf) 0 real in
   let parsed_reals = split (regexp_string "\n\r\n") response in
   let parsed_final = match parsed_reals with [] -> "" | _ :: y -> List.hd y in
-  output_string o parsed_final
+  output_string o parsed_final;
+  print_endline parsed_final
 
 let get url dest =
   let strings = split_on_char '/' url in
@@ -38,13 +39,14 @@ let get url dest =
     output_string o request_url;
     flush o
   in
-  let _ = print_string request_url in
-  try save i dest with End_of_file -> Unix.close s
+  try save i dest with _ -> Unix.close s
 
 let () =
-  let url =
-    try sscanf argv.(1) "http://%s" (fun x -> x)
-    with _ -> sscanf argv.(1) "https://%s" (fun x -> x)
-  in
-  let dest = argv.(2) in
-  get url dest
+  try
+    let url =
+      try sscanf argv.(1) "http://%s" (fun x -> x)
+      with _ -> sscanf argv.(1) "https://%s" (fun x -> x)
+    in
+    let dest = argv.(2) in
+    get url dest
+  with _ -> print_endline "Usage: nimm {url (http/https)} {filename}"
