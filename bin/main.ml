@@ -2,12 +2,16 @@ open Unix
 open Sys
 open Scanf
 open String
+open Str
 
 let save i dest =
   let o = open_out dest in
   let buf = Bytes.create 1000000 in
   let real = input i buf 0 (Bytes.length buf) in
-  output_string o (String.sub (Bytes.to_string buf) 0 real)
+  let response = String.sub (Bytes.to_string buf) 0 real in
+  let parsed_reals = split (regexp_string "\n\r\n") response in
+  let parsed_final = match parsed_reals with [] -> "" | _ :: y -> List.hd y in
+  output_string o parsed_final
 
 let get url dest =
   let strings = split_on_char '/' url in
@@ -22,7 +26,7 @@ let get url dest =
   let addr = (gethostbyname parsed_url).h_addr_list.(0) in
   let request_url =
     "GET " ^ "/" ^ path ^ " HTTP/1.1\r\n" ^ "Host: " ^ parsed_url ^ "\r\n"
-    ^ "User-Agent: OCaml\r\nConnection: close\r\n\r\n"
+    ^ "User-Agent: OCaml\r\nConnection: close\r\nSchema: HTTPS\r\n\r\n"
   in
 
   let s = socket PF_INET SOCK_STREAM 0 in
@@ -38,6 +42,9 @@ let get url dest =
   try save i dest with End_of_file -> Unix.close s
 
 let () =
-  let url = sscanf argv.(1) "http://%s" (fun x -> x) in
+  let url =
+    try sscanf argv.(1) "http://%s" (fun x -> x)
+    with _ -> sscanf argv.(1) "https://%s" (fun x -> x)
+  in
   let dest = argv.(2) in
   get url dest

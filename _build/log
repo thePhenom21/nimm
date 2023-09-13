@@ -1,9 +1,9 @@
-# dune exec nimm http://jsonplaceholder.typicode.com/posts/1 outputfile2.txt
+# dune exec nimm http://jsonplaceholder.typicode.com/posts/1 outputfile.txt
 # OCAMLPARAM: unset
 # Shared cache: disabled
 # Workspace root: /home/can/projects/ocaml-projects/nimm
 # Auto-detected concurrency: 16
-$ /home/can/.opam/5.0.0/bin/ocamlc.opt -config > /tmp/dune_39e5fd_output
+$ /home/can/.opam/5.0.0/bin/ocamlc.opt -config > /tmp/dune_7fe21b_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"

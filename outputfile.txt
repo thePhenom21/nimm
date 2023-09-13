@@ -1,29 +1,3 @@
-HTTP/1.1 200 OK
-Date: Wed, 13 Sep 2023 07:13:37 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 292
-Connection: close
-X-Powered-By: Express
-X-Ratelimit-Limit: 1000
-X-Ratelimit-Remaining: 998
-X-Ratelimit-Reset: 1694575263
-Vary: Origin, Accept-Encoding
-Access-Control-Allow-Credentials: true
-Cache-Control: max-age=43200
-Pragma: no-cache
-Expires: -1
-X-Content-Type-Options: nosniff
-Etag: W/"124-yiKdLzqO5gfBrJFrcdJ8Yq0LGnU"
-Via: 1.1 vegur
-CF-Cache-Status: HIT
-Age: 14001
-Accept-Ranges: bytes
-Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=ouoKkqVFVKy8WpPHy%2FWGZY83Bh2pg%2BzTUYf6icPfTYXnbdlaJVAqeusuTa%2FfjvlUQYEh2pqP5%2BmGY2pytsRRf4GynCTQlcRsL6jlO4fFDZ3rsNbmeHmqIked7lqohTLXuZUAuN7i4%2FB6rRAPXpCV"}],"group":"cf-nel","max_age":604800}
-NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
-Server: cloudflare
-CF-RAY: 805e96ae9f7dda36-IST
-alt-svc: h3=":443"; ma=86400
-
 {
   "userId": 1,
   "id": 1,

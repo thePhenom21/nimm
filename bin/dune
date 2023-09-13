@@ -1,4 +1,4 @@
 (executable
  (public_name nimm)
  (name main)
- (libraries nimm core core_unix))
+ (libraries nimm core core_unix str))
